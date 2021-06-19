@@ -62,7 +62,7 @@
               email:response.email
             }
             localStorage.setItem("userData",JSON.stringify(obj));
-            window.location.replace("http://localhost:5500/user_details/index.html");
+            window.location.replace("https://signinauth.netlify.app/user_details/index.html");
         });
     
     }
@@ -75,7 +75,7 @@
         <h1>Sign In</h1>
         <input type="text" placeholder="Email or Username">
         <input type="Password" name="pass" id="pass"  placeholder="Password">
-        <a href="./user_details/index.html"><small>Forgot password</small></a>
+        <a href="#"><small>Forgot password</small></a>
         <button type="submit">Sign In</button>
         <div class="button-wrapper">
         <div id="gSignInWrapper">
