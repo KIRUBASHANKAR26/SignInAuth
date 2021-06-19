@@ -10,17 +10,24 @@
 <body>
     
     <script>
+        FB.init({
+        appId: '{your-app-id}',
+        cookie: true,
+        xfbml: true,
+        version: 'v2.12'
+    });
+
     function fbLogout(){
-    if(typeof FB.logout == 'function'){
-        console.log("fb-res",FB.getAuthResponse())
-        if (FB.getAuthResponse()) {
-        // FB.logout(function(response) { window.location.href = "/index.html"}); 
-         return;
-        }  
-    };
-   // window.location.href = "/index.html"; 
-    return;  
-}
+        FB.getLoginStatus(function (response) {
+            if (response.status == 'connected')
+                FB.logout(function (response) {
+                    window.location.href = "/index.html";
+                });
+            else
+                window.location.href = "/index.html";
+        });
+    }
+    
     </script>   
     <h2 style="text-align: center;">SignIn Successful</h2>
     <div>
