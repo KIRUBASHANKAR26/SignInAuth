@@ -15,6 +15,7 @@
 
         if (response.status === 'connected') {
             testAPI();
+             window.location.replace("https://signinauth.netlify.app/user_details/index.html");
         } else if (response.status === 'not_authorized') {
             document.getElementById('status').innerHTML = 'Please log ' +  'into this app.';
         } else {
@@ -62,7 +63,7 @@
               email:response.email
             }
             localStorage.setItem("userData",JSON.stringify(obj));
-            window.location.replace("https://signinauth.netlify.app/user_details/index.html");
+           
         });
     
     }
