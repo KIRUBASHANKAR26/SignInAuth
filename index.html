@@ -14,8 +14,9 @@
         console.log(response);
 
         if (response.status === 'connected') {
+            console.log("connected")
             testAPI();
-            window.location.replace("https://signinauth.netlify.app/user_details/index.html");
+           // window.location.replace("https://signinauth.netlify.app/user_details/index.html");
         } else if (response.status === 'not_authorized') {
             document.getElementById('status').innerHTML = 'Please log ' +  'into this app.';
         } else {
