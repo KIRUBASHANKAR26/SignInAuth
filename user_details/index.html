@@ -8,12 +8,27 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <a href="/index.html">HOME</a>
+    <script>
+    function fbLogout(){
+    if(typeof FB.logout == 'function'){
+        if (FB.getAuthResponse()) {
+         FB.logout(function(response) { window.location.href = "/index.html"}); 
+         return;
+        }  
+    };
+    window.location.href = "/index.html"; 
+    return;  
+}
+    </script>   
     <h2 style="text-align: center;">SignIn Successful</h2>
-
+    <div>
+        <a href="/index.html">HOME</a>
+        <span id="fbLogout" onclick="fbLogout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></span>
+    </div>
     <div id="user-details">
         <!-- append child -->
     </div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=785655515471638&autoLogAppEvents=1" nonce="32kaYvCM"></script>
     <script src="script.js"></script>
 </body>
 </html>
