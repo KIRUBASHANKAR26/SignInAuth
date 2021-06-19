@@ -19,7 +19,7 @@ var googleUser = {};
               email:data.getEmail()
             }
             localStorage.setItem("userData",JSON.stringify(obj));
-           // window.location.replace("https://signinauth.netlify.app/user_details/index.html");
+            window.location.replace("https://signinauth.netlify.app/user_details/index.html");
 
         }, function(error) {
           alert(JSON.stringify(error, undefined, 2));
