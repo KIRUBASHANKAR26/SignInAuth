@@ -25,7 +25,7 @@ var googleUser = {};
           alert(JSON.stringify(error, undefined, 2));
         });
   }
-//startApp()
+startApp()
 const customBtn = document.getElementById("customBtn");
 
 customBtn.addEventListener("click", () => {
