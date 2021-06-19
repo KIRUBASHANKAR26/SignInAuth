@@ -14,11 +14,11 @@
     if(typeof FB.logout == 'function'){
         console.log("fb-res",FB.getAuthResponse())
         if (FB.getAuthResponse()) {
-         FB.logout(function(response) { window.location.href = "/index.html"}); 
+        // FB.logout(function(response) { window.location.href = "/index.html"}); 
          return;
         }  
     };
-    window.location.href = "/index.html"; 
+   // window.location.href = "/index.html"; 
     return;  
 }
     </script>   
