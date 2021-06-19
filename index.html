@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <title>LogIn Form </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>
+    function statusChangeCallback(response) {
+        console.log(response);
+
+        if (response.status === 'connected') {
+            testAPI();
+        } else if (response.status === 'not_authorized') {
+            document.getElementById('status').innerHTML = 'Please log ' +  'into this app.';
+        } else {
+            document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
+        }
+    }
+
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    window.fbAsyncInit = function() {
+    
+        FB.init({
+            appId : '{785655515471638}',
+            cookie : true, 
+            xfbml : true,
+            version : 'v7.0' 
+        });
+
+    // These three cases are handled in the callback function.
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    };
+
+    (function(d, s, id) {
+    
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src ='https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=785655515471638&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function testAPI() {
+        console.log('Welcome! Fetching your information…. ');
+        FB.api('/me','GET', {fields: 'name,email,picture.width(150).height(150)'},function(response){
+
+            let obj = {
+              url:response.picture.data.url,
+              name:response.name,
+              email:response.email
+            }
+            localStorage.setItem("userData",JSON.stringify(obj));
+            window.location.replace("http://localhost:5500/user_details/index.html");
+        });
+    
+    }
+
+</script>
+  <main>
+    <div class="container">
+      <div class="split left">
+        <a href="#" id="logo"><img src="./images/logo(1).svg" alt="logo"></a>
+        <h1>Sign In</h1>
+        <input type="text" placeholder="Email or Username">
+        <input type="Password" name="pass" id="pass"  placeholder="Password">
+        <a href="./user_details/index.html"><small>Forgot password</small></a>
+        <button type="submit">Sign In</button>
+        <div class="button-wrapper">
+        <div id="gSignInWrapper">
+          <p class="label">Sign in with:</p>
+          <div id="customBtn" class="customGPlusSignIn">
+            <span class="icon"></span>
+            <span class="buttonText">Google</span>
+          </div>
+        </div>
+        <div class="fb-wrapper">
+          <div class="fb-login-button" data-scope="public_profile,email" data-onlogin="checkLoginState()" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        </div>
+        
+      </div>
+      <div id="status"></div>
+      </div>
+
+      <div class="split right">
+        <div class="image-1">
+          <img src="./images/auth-img-2.png" alt="image-1">
+        </div>
+        <div class="right-section">
+          <h2>Explore your <br> creativity</h2>
+          <p>Discover new skills, meet passionate teachers and<br>
+           become a part of the helpfull community of<br>
+           creatives in the world</p>
+        </div>
+        <div class="image-2">
+          <img src="./images/auth-img-1.png" alt="image-2">
+        </div>
+      </div>
+    </div>
+  </main>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=785655515471638&autoLogAppEvents=1" nonce="32kaYvCM"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

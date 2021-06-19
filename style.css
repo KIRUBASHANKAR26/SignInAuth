@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.split{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding-left: 8rem;
+}
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.split.right{
+    background-color: #0056FB;
+    height: 100%; 
+}
+.split.left{
+    height: 100%; 
+}
+h1{
+    font-size: 3rem;
+}
+input[type = 'text'],input[type = 'password']{
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: none;
+    margin: 1.5rem 0 0;
+    width: 100%;
+    max-width: 70%;
+    border: 2px solid;
+}
+button{
+    width: 100%;
+    max-width: 70%;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: none;
+    background-color: #0056FB;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+button:active{
+    transform: scale(0.99);
+}
+button:focus{
+    border:none;
+}
+#logo{
+    height: 80px;
+    width: 100px;
+    position: absolute;
+    top: 3rem;
+    left: 8rem;
+}
+/*  */
+#customBtn {
+    display: inline-block;
+    background: white;
+    color: #444;
+    width: 100%;
+    max-width: 160px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid;
+    box-shadow: 1px 1px 1px grey;
+    white-space: nowrap;
+  }
+  #customBtn:hover {
+    cursor: pointer;
+  }
+  .label {
+    margin-top: 1rem;
+    font-family: serif;
+    font-weight: normal;
+  }
+  span.icon {
+    background: url('./images/Google_\ G\ _Logo.svg') transparent 5px 50% no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+  }
+  span.buttonText {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 35px);
+    height: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 2.8;
+    padding-left: .5rem;
+    font-family: 'Roboto', sans-serif;
+    background: #0056FB;
+    color: #fff;
+    border-radius:0 0.5rem 0.5rem 0;
+
+  }
+  #gSignInWrapper{
+    width: 100%;
+  }
+   /* Google css end */
+  .button-wrapper{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+  }
+  .right-section h2{
+    font-size: 3rem;
+    color: #fff;
+    margin-top: -5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+  .right-section p{
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.5;
+  }
+  .image-1{
+    text-align: right;
+    position: relative;
+  } 
+  .image-1 img{
+    padding:10rem 4rem 0 0;
+  } 
+  .image-1::before{
+    content: "";
+    background: url("./images/bg-image-1.svg") no-repeat;
+    display: inline-block;
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 10rem;
+    left: -10rem;
+  }
+  .fb-wrapper{
+    margin-top: 2rem;
+  }
+  .fb-login-button {
+    width: 100%;
+ }
+ #user-details{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ .user-profile{
+    margin-top: 2rem;
+    border: 1px solid #000;
+    padding: 2rem;
+    border-radius: 2rem;
+ }
+ .user-profile p{
+   color: #000;
+ }
+  @media (max-width:1024px){
+    .split.right{
+      display: none;
+    }
+    .split{
+      width: 100%;
+      align-items: center;
+      padding-left: 0;
+    }
+    .button-wrapper{
+      flex-direction: column;
+    }
+    #customBtn{
+      max-width: 240px;
+    }
+    .fb-wrapper{
+      margin: 2rem auto 0;
+    }
+    #gSignInWrapper {
+      text-align: center;
+    }
+  }
+
+  
+ 
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
