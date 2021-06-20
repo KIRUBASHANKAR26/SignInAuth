@@ -71,13 +71,15 @@ button:focus{
     border:none;
 }
 #logo{
-    height: 80px;
-    width: 100px;
+    height: 40px;
+    width: 135px;
     position: absolute;
     top: 3rem;
     left: 8rem;
+    overflow: hidden;
 }
-/*  */
+
+/*Google custom btn */
 #customBtn {
     display: inline-block;
     background: white;
@@ -178,6 +180,14 @@ button:focus{
  .user-profile p{
    color: #000;
  }
+.flex{
+    display:flex;
+    justify-content:space-between;
+}
+.flex span{
+    cursor:pointer;
+}
+
   @media (max-width:1024px){
     .split.right{
       display: none;
@@ -198,6 +208,10 @@ button:focus{
     }
     #gSignInWrapper {
       text-align: center;
+    }
+     #logo {
+    top: 2rem;
+    left: 1rem;
     }
   }
 
